@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тижневі завдання</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      background-color: #FEFEFE;
+      color: #353535;
+    }
+
+    header {
+      background-color: #747D71;
+      color: #FEFEFE;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 1em;
+    }
+
+    nav a {
+      color: #FEFEFE;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 20px;
+      background-color: #353535;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #FF5623;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 2em;
+      background-color: #EAEAEA;
+    }
+
+    h1 {
+      text-align: center;
+      color: #353535;
+    }
+
+    .week-day {
+  margin: 2em auto;
+  background-color: #F5E663; /* Приглушений жовтий */
+  border-radius: 12px;
+  padding: 1.5em;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+    .week-day h2 {
+      margin-top: 0;
+      color: #353535;
+      text-align: center;
+    }
+
+    .task-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      margin-top: 1em;
+    }
+
+    .task-item {
+      position: relative;
+      background-color: #FEFEFE;
+      border: 2px solid #353535;
+      border-radius: 12px;
+      padding: 1em;
+      width: 200px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .task-item:hover {
+      transform: scale(1.05);
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #FFFBCC;
+      color: #353535;
+      padding: 0.7em;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      width: 180px;
+      text-align: center;
+      z-index: 100;
+    }
+
+    .task-item:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><i class="fa-solid fa-house"></i> S&S Освіта</div>
+  <nav>
+    <a href="index.html">Головна</a>
+      <a href="schedule.html">Розклад</a>
+      <a href="calendar.html">Календар подій</a>
+      <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Вхід</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Тижневі завдання</h1>
+
+  <!-- Понеділок -->
+  <div class="week-day">
+    <h2>Понеділок</h2>
+    <div class="task-list">
+      <div class="task-item">Математика<div class="tooltip">Сторінка 25, завдання 3-6</div></div>
+      <div class="task-item">Література<div class="tooltip">Прочитати розділ 2</div></div>
+    </div>
+  </div>
+
+  <!-- Вівторок -->
+  <div class="week-day">
+    <h2>Вівторок</h2>
+    <div class="task-list">
+      <div class="task-item">Хімія<div class="tooltip">5 задач з теми “Оксиди”</div></div>
+      <div class="task-item">Англійська<div class="tooltip">Вивчити слова Unit 3</div></div>
+    </div>
+  </div>
+
+  <!-- Середа -->
+  <div class="week-day">
+    <h2>Середа</h2>
+    <div class="task-list">
+      <div class="task-item">Географія<div class="tooltip">Карта країн Європи</div></div>
+      <div class="task-item">Українська<div class="tooltip">Префікси: вправа 14</div></div>
+    </div>
+  </div>
+
+  <!-- Четвер -->
+  <div class="week-day">
+    <h2>Четвер</h2>
+    <div class="task-list">
+      <div class="task-item">Інформатика<div class="tooltip">HTML-сторінка про хобі</div></div>
+      <div class="task-item">Історія<div class="tooltip">Параграф 11</div></div>
+    </div>
+  </div>
+
+  <!-- П’ятниця -->
+  <div class="week-day">
+    <h2>П’ятниця</h2>
+    <div class="task-list">
+      <div class="task-item">Фізика<div class="tooltip">Формули з теми "Механіка"</div></div>
+      <div class="task-item">Мистецтво<div class="tooltip">Натюрморт із фруктами</div></div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Головна | S&S Освіта</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #EAEAEA, #F5F5F5);
+      color: #353535;
+    }
+
+    header {
+      background-color: #747D71;
+      color: #FEFEFE;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 1em;
+    }
+
+    nav a {
+      color: #FEFEFE;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 20px;
+      background-color: #353535;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #FF5623;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 2em;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: slideIn 1s ease-out forwards;
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+      margin-top: 2em;
+    }
+
+    .card {
+      background: #FEFEFE;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2em;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card i {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      color: #FF5623;
+    }
+
+    .card h3 {
+      margin: 0.5em 0;
+    }
+
+    footer {
+      background-color: #353535;
+      color: #FEFEFE;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><i class="fa-solid fa-house"></i> S&S Освіта</div>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="schedule.html">Розклад</a>
+      <a href="calendar.html">Календар подій</a>
+      <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Вхід</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Ласкаво просимо до S&S Освіта!</h1>
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-calendar-days"></i>
+        <h3>Розклад уроків</h3>
+        <p>Переглянь свій навчальний графік за тиждень.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-bullhorn"></i>
+        <h3>Оголошення</h3>
+        <p>Будь у курсі останніх подій та новин школи.</p>
+      </div>
+      <div class="card">             
+        <i class="fa-solid fa-user-graduate"></i>
+        <h3>Особистий кабінет</h3>
+        <p>Керуйте своїм профілем та навчанням.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Шкільна платформа. Створено з ❤️ | ""></a></p>
+  </footer>
+
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const profile = localStorage.getItem('userProfile');
+    const nav = document.querySelector('nav');
+
+    if (profile) {
+      // Приховати "Вхід"
+      const loginLink = nav.querySelector('a[href="login.html"]');
+      if (loginLink) loginLink.style.display = 'none';
+
+      // Додати "Мій профіль", якщо ще немає
+      if (!nav.querySelector('a[href="cabinet.html"]')) {
+        const profileLink = document.createElement('a');
+        profileLink.href = 'cabinet.html';
+        profileLink.innerHTML = '<i class="fa-solid fa-user"></i> Мій профіль';
+        nav.appendChild(profileLink);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

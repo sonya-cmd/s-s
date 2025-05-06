@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Головна сторінка</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --main-green: #747D71;
+      --dark-gray: #353535;
+      --soft-yellow: #F5E663;
+      --bright-orange: #FF5623;
+      --light-gray: #EAEAEA;
+      --white: #FEFEFE;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: var(--light-gray);
+    }
+
+    header {
+      background-color: var(--dark-gray);
+      color: var(--white);
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: var(--soft-yellow);
+    }
+
+    nav {
+      display: flex;
+      gap: 1em;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 20px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    nav a:hover {
+      background-color: var(--main-green);
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 2em;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: var(--dark-gray);
+      margin-top: 2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #444;
+      max-width: 600px;
+      margin: 1em auto;
+    }
+
+    .info-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      margin-top: 3em;
+    }
+
+    .info-box {
+      background-color: var(--white);
+      border: 2px solid var(--main-green);
+      border-radius: 15px;
+      padding: 1.5em;
+      width: 280px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .info-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .info-box h3 {
+      color: var(--bright-orange);
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><i class="fa-solid fa-house"></i> S&S Освіта</div>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="schedule.html">Розклад</a>
+      <a href="calendar.html">Календар подій</a>
+      <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Вхід</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Ласкаво просимо!</h1>
+    <p>Це головна сторінка нашого проєкту. Скористайтесь навігацією вище, щоб перейти до потрібного розділу.</p>
+    <p>Цей сайт є шкільною платформою, що допомагає учням, вчителям і батькам зручно організовувати навчальний процес, переглядати календар подій, обмінюватися інформацією та взаємодіяти онлайн.</p>
+
+    <div class="info-section">
+      <div class="info-box" style="animation-delay: 0.2s;">
+        <h3>Для учнів</h3>
+        <p>Отримуйте розклад занять, домашні завдання, повідомлення від вчителів та беріть участь у вікторинах та конкурсах.</p>
+      </div>
+      <div class="info-box" style="animation-delay: 0.4s;">
+        <h3>Для вчителів</h3>
+        <p>Плануйте уроки, публікуйте матеріали, оцінки та спілкуйтеся з учнями й батьками через зручний інтерфейс.</p>
+      </div>
+      <div class="info-box" style="animation-delay: 0.6s;">
+        <h3>Для батьків</h3>
+        <p>Слідкуйте за успішністю дитини, отримуйте повідомлення від школи та будьте в курсі всіх подій.</p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

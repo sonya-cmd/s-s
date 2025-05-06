@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Успішно</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to right, #e8f5e9, #c8e6c9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      color: #2e7d32;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header {
+      width: 100%;
+      background: linear-gradient(to right, #388e3c, #66bb6a);
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header .logo {
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .success-box {
+      margin-top: 100px;
+      text-align: center;
+      background: white;
+      padding: 2em 3em;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: popUp 0.5s ease-out;
+    }
+
+    .success-box i {
+      font-size: 3em;
+      color: #4caf50;
+      margin-bottom: 0.5em;
+    }
+
+    .success-box h1 {
+      font-size: 2em;
+      margin: 0.5em 0;
+    }
+
+    .success-box p {
+      font-size: 1.2em;
+      color: #388e3c;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><i class="fa-solid fa-house"></i> S&S Освіта</div>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="schedule.html">Розклад</a>
+      <a href="calendar.html">Календар подій</a>
+      <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Вхід</a>
+    </nav>
+  </header>
+
+  <div class="success-box">
+    <i class="fa-solid fa-circle-check"></i>
+    <h1>Успішно!</h1>
+    <p id="user-email">Завантаження email...</p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const email = localStorage.getItem('userEmail');
+      const emailElement = document.getElementById('user-email');
+      if (email) {
+        emailElement.innerText = `Ви увійшли як: ${email}`;
+      } else {
+        emailElement.innerText = 'Email не знайдено.';
+      }
+    });
+  </script>
+
+</body>
+</html>
